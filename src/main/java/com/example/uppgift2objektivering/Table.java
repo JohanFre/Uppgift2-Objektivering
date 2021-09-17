@@ -4,7 +4,21 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Table {
 
-    private SimpleStringProperty OrderDate,Region,Rep1,Rep2,Item,Units,UnitCost,Total;
+    // The been that gets and sets the CSV strings.
+
+    private final SimpleStringProperty OrderDate,Region,Rep1,Rep2,Item,Units,UnitCost,Total;
+
+    Table(String orderDate, String Region, String Rep1, String Rep2,
+          String Item, String Units, String UnitCost, String Total) {
+        this.OrderDate = new SimpleStringProperty(orderDate);
+        this.Region = new SimpleStringProperty(Region);
+        this.Rep1 = new SimpleStringProperty(Rep1);
+        this.Rep2 = new SimpleStringProperty(Rep2);
+        this.Item = new SimpleStringProperty(Item);
+        this.Units = new SimpleStringProperty(Units);
+        this.UnitCost = new SimpleStringProperty(UnitCost);
+        this.Total = new SimpleStringProperty(Total);
+    }
 
 
     public String getOrderDate() {
@@ -102,18 +116,5 @@ public class Table {
     public void setTotal(String total) {
         this.Total.set(total);
     }
-
-    Table(String orderDate, String Region, String Rep1, String Rep2,
-          String Item, String Units, String UnitCost, String Total) {
-        this.OrderDate = new SimpleStringProperty(orderDate);
-        this.Region = new SimpleStringProperty(Region);
-        this.Rep1 = new SimpleStringProperty(Rep1);
-        this.Rep2 = new SimpleStringProperty(Rep2);
-        this.Item = new SimpleStringProperty(Item);
-        this.Units = new SimpleStringProperty(Units);
-        this.UnitCost = new SimpleStringProperty(UnitCost);
-        this.Total = new SimpleStringProperty(Total);
-    }
-
 
 }
